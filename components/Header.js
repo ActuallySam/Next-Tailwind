@@ -8,7 +8,7 @@ function Header() {
             {/* left */}
             <div className='relative flex ite h-10 cursor-pointer my-auto'>
                 <Image 
-                    src="https://links.papareact.com/qd3" 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png" 
                     layout="fill"
                     objectFit="contain"
                     onjectPosition="left" />
