@@ -3,6 +3,8 @@ import Header from '../components/Header';
 import Banner from '../components/Banner';
 import SmallCard from '../components/SmallCard';
 import MediumCard from '../components/MediumCard';
+import LargeCard from '../components/LargeCard';
+import Footer from '../components/Footer'
 
 export default function Home({ exploreData, cardsData }) {
 
@@ -37,7 +39,7 @@ export default function Home({ exploreData, cardsData }) {
 
         <section>
           <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
-          <div className="flex space-x-3 overflow-scroll">
+          <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
             {cardsData?.map(item => (
               <MediumCard 
                 key={item.img}
@@ -47,7 +49,15 @@ export default function Home({ exploreData, cardsData }) {
           </div>
         </section>
 
+        <LargeCard 
+          img="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
+          title="The Greatest Outdoors"
+          description="Wishlists created by Airbnb"
+          buttonText="Get Inspired" />
+
       </main>
+
+      <Footer />
 
     </div>
   )
