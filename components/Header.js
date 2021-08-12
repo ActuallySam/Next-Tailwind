@@ -14,6 +14,9 @@ function Header() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
+    // Setting the number of guests and to track that value and default being 1
+    const [noOfGuests, setNoOfGuests] = useState(1);
+
     //For Selecting the range of the dates
     const selectionRange = {
         startDate: startDate,
@@ -26,6 +29,11 @@ function Header() {
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     };
+
+    //Cancels the search and resets the input text field to blank
+    const resetInput = () => {
+        setSearchInput("");
+    }
 
     return (
         <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10">
@@ -74,6 +82,22 @@ function Header() {
                         minDate={new Date()}
                         rangeColors={["#fd5b61"]}
                         onChange={handleSelect} />
+
+                    <div className="flex items-center border-b mb-4">
+                        <h2 className="text-2xl flex-grow font-semibold">Number of Guests</h2>
+
+                        <UsersIcon className="h-5" />
+                        <input 
+                            value={noOfGuests}
+                            onChange={(e) => setNoOfGuests(e.target.value)}
+                            min={1}
+                            type="number"
+                            className="w-12 pl-2 text-lg outline-none text-red-500" />
+                    </div>
+                    <div className="flex">
+                        <button className="flex-grow text-gray-500" onClick={resetInput}>Cancel</button>
+                        <button className="flex-grow text-red-500">Search</button>
+                    </div>
                 </div>
             )}
 
