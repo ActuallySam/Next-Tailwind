@@ -1,5 +1,10 @@
 import Image from "next/image";
-import { SearchIcon, MenuIcon, GlobeAltIcon, UsersIcon, UserCircleIcon } from "@heroicons/react/solid";
+import { SearchIcon, 
+    MenuIcon, 
+    GlobeAltIcon, 
+    UsersIcon, 
+    UserCircleIcon } 
+from "@heroicons/react/solid";
 import { useState } from "react";
 import { DateRangePicker } from "react-date-range";
 import 'react-date-range/dist/styles.css';  //main style file
@@ -35,7 +40,7 @@ function Header({ placeholder }) {
     //Cancels the search and resets the input text field to blank
     const resetInput = () => {
         setSearchInput("");
-    }
+    };
 
     const search = () => {
         router.push({
@@ -47,13 +52,13 @@ function Header({ placeholder }) {
                 noOfGuests,
             },
         });
-    }
+    };
 
     return (
         <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10">
 
             {/* left */}
-            <div onClick={() => router.push("/")} className='relative flex items-center h-10 cursor-pointer my-auto md:'>
+            <div onClick={() => router.push("/")} className="relative flex items-center h-10 cursor-pointer my-auto">
                 <Image 
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png" 
                     layout="fill"
